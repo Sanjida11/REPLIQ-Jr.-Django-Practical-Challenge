@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Devices</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Condition</th>
+        <th>Checked Out By</th>
+        <th>Checked Out Date</th>
+        <th>Returned Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for device in devices %}
+        <tr>
+          <td>{{ device.name }}</td>
+          <td>{{ device.condition }}</td>
+          <td>{{ device.checked_out_by }}</td>
+          <td>{{ device.checked_out_date }}</td>
+          <td>{{ device.returned_date }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
